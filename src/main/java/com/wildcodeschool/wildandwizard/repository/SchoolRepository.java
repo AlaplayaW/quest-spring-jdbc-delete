@@ -21,10 +21,10 @@ public class SchoolRepository {
         // TODO: delete a school from the database
         Connection connection = null;
         PreparedStatement statement = null;
-        ResultSet resultSet = null;
+        
         try {
-            Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-            PreparedStatement statement = connection.prepareStatement("DELETE FROM school WHERE " +
+            connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+            statement = connection.prepareStatement("DELETE FROM school WHERE " +
                     "id = ?");
 
             statement.setLong(1, id);
